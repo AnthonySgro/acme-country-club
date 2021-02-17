@@ -1,7 +1,10 @@
 const { Sequelize, DataTypes, Model } = require("sequelize");
-const database = new Sequelize("postgres://localhost/acme_country_club", {
-    logging: false,
-});
+const database = new Sequelize(
+    process.env.DATABASE_URL || "postgres://localhost/acme_country_club",
+    {
+        logging: false,
+    },
+);
 
 class Facility extends Model {}
 class Member extends Model {}

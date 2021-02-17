@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = 3000;
+const PORT = process.env.DATABASE_URL || 3000;
 const { init, database, models } = require("./database");
 
 const seedMore = async () => {
